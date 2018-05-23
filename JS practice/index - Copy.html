@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<title>PAGE TITLE</title>
+		<meta charset="utf-8">
+		<meta name="keymords" content="HTML,CSS,JavaScript"> <!-- puslapio paieskos raktiniai zodziai-->
+		<meta name="descritpion" content="Page wrote by Donas"><!-- puslapio aprasymas-->
+		<meta name = "viewport" content="width=device-width,initial-scale=1"><!-- ka prisitaikyti prie ekrano-->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- bootstrap -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="muScript.js"></script> <!--nuoroda i atskira JS faila -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!--jQuery library-->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!--latest compiled JS -->
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+		<style type="text/css">
+
+		body {
+			
+			font-family: Snell Roundhand, cursive;
+	        color:#8C848B;
+		    background-image: url("color.jpg");
+			 -webkit-background-size: cover;
+  			-moz-background-size: cover;
+ 		    -o-background-size: cover;
+  			background-size: cover;
+		}
+			.header {
+				text-align:center;
+			}
+
+			.left {
+				background:-webkit-linear-gradient(left ,#FCC0CA,#FECCD5); 
+				height: 300px;
+				text-align:center;
+
+			}
+			.right {
+				background: -webkit-linear-gradient(left ,#FECCD5, #FEF0F0);
+				height: 300px;
+				text-align:center;
+			}
+			.trans {
+				  
+  					background-color: #ffffff;
+  					opacity: 0.6;
+ 		            filter: alpha(opacity=60);
+ 		            height: 100px;
+ 		            text-align: center;
+			}
+			.image {
+				padding: 20px;
+				text-align-last: center;
+				display: inline;
+				background-color: #FBB4B8;
+				height: 450px;
+			}
+			#change {
+				text-align:right;
+				background-color: #FBB4B8;
+				height: 100px;
+			}
+
+			#wDay {
+				font-size: 20px;
+			}
+
+			#gallery img{
+				height: 110px;
+				width:125px;
+			}
+			.hidden {
+				width: 100vw;
+				height: 100vh;
+				display: none;
+				position: absolute;
+				transform: translate(50%,-50%);
+			}
+			#first {padding-top: 30px;
+				padding-left: 20px;
+
+			}
+
+			li {
+				list-style-type: none;
+				padding: 20px;
+
+			}
+
+			li img:hover {
+				box-shadow: 0 0 5px 1px rgba (100,140,180,0.5);
+			}
+
+			li img {
+				height:300px;
+				width: 300px;
+			}
+
+			button {
+				background-color: #FECCD5;
+				color:#8C848B;
+				padding: 10px 15px;
+				text-align:center;
+				box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+				cursor: pointer;
+				margin: 30px;
+				
+			}
+
+		</style>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-md-12 header">
+				<h1>WOLFLAND</h1>
+			</div>
+			<div class="col-md-6 left">
+				<button onclick="getText()"> Get Alpaka text</button>
+				<p id="alpaka"></p>
+				<button onclick="getName()">Get Name</button>
+				<p id="word"></p>
+			</div>
+			<div class="col-md-6 right">
+				<button onclick="discount()"> Count discount</button>
+				<p id="price"></p>
+				<p id="totalPrice"></p>
+				<button onclick="getAge()" >Get age</button>
+				<p id="agee"></p>
+			</div>
+			<div class="col-md-12 trans">
+					<button onclick="auch()">DO NOT TOUCH IT</button>
+					<button onclick="buttonA(this)">Change it!</button>
+					<span id = "color" ></span>
+				<button onclick="weekDay(this)">WEEK DAY</button>
+				<span id="wDay"></span>
+
+			</div>
+			<div class="row">
+			    <div class="col-md-4 image">
+				<img id="myImg" alt="picture" src="pink1.jpg">
+				<br><br><button onclick="Slide('')">PREVIOUS </button> <button onclick="Slide('')">NEXT></button>
+			</div>
+          <div class = "col-md-2" id="gallery">
+          	<ul>
+            <li><img onmouseover="myFunction('wolf1.jpg')" src="wolf1.jpg" alt="HTML5 Icon" ></li>
+              <li><img onmouseover="myFunction('horse2.jpg')" src="horse2.jpg" alt="HTML5 Icon" ></li>
+               <li><img onmouseover="myFunction('wolf.jpg')" src="wolf.jpg" alt="HTML5 Icon" ></li>
+
+          </ul>
+        </div>
+          <div id ="first" class="col-md-6">
+              <img src="wolf.jpg" alt="HTML5 Icon" style="width:100%; height:100%">
+          </div>
+        </div>
+      
+  </div>
+			</div>
+		
+<script type="text/javascript">
+	
+	function getText(){
+		var alpaka = "Alpaka" + " " + "rulezzz";
+		document.getElementById("alpaka").innerHTML= alpaka;
+	}
+
+	function getName(){
+		var name = prompt ("Koks jūsų vardas?");
+		if (name != null){
+			document.getElementById("word").innerHTML = "Sveiki, " + name + ". Kaip šiandien laikotės?";
+		}
+	}
+
+	function discount(){
+		var age = prompt("Kiek jums metų? ");
+		var price = prompt("Kokia produkto kaina?");
+		document.getElementById("price").innerHTML="Vaistų kaina be nuolaidos " + price + " "+  "eur.";
+		if (age>=60) {
+			var totalPrice= price - (price *0.25);
+			document.getElementById("totalPrice").innerHTML="Kaina su nuolaida "  + totalPrice + " " + "eur.";
+		}else{
+			document.getElementById("totalPrice").innerHTML="Nuolaida jums netaikoma.";
+		}
+		}
+
+		function getAge(){
+			var age = parseInt(prompt("Įveskite savo amžių."));
+			document.getElementById("agee").innerHTML="Po 35 metų jums bus " + (age + 35) + ".";
+		}
+
+		function auch (){
+			alert("AUCH!")
+		}
+
+		function buttonA(elem){
+			var color1 = prompt ("Pakeisk splavą!");
+			elem.style.color=color1;
+			var backG = prompt("Pakeisk foną!");
+			elem.style.backgroundColor=backG;
+		}
+
+		var imageIndex = 1;
+		var imgNames = ["pink1.jpg"
+						,"pink2.jpg",
+						" pink3.jpg", 
+						"pink4.jpg"];
+		document.getElementById('myImg');
+
+		function Slide(){
+			myImg.setAttribute("src" ,imgNames[imageIndex]);
+			imageIndex ++;
+			if (imageIndex > 3){
+				imageIndex = 0;
+			}
+		}
+
+		 function myFunction(pic)
+      {
+        document.getElementById("first").innerHTML = "<img src = "+pic+" style='width:100%; height:100%'>";
+      }
+
+
+		var currentDay= "Pirmadienis";
+			     function weekDay (){
+        		    switch (currentDay) {
+        			case "Pirmadienis":
+        			document.getElementById("wDay").style.color= "";
+        			document.getElementById("wDay").innerHTML="Antradienis";
+        			currentDay="Antradienis";
+        			break;
+        			case "Antradienis":
+        			document.getElementById("wDay").style.color= "";
+        			document.getElementById("wDay").innerHTML="Trečiadienis";
+        			currentDay="Trečiadienis";
+        			break;
+          			case "Trečiadienis":
+        			document.getElementById("wDay").style.color= "";
+        			document.getElementById("wDay").innerHTML="Ketvirtadienis";
+        			currentDay="Ketvirtadienis";
+        			break;
+        			
+        			case "Ketvirtadienis":
+        			document.getElementById("wDay").style.color= "";
+        			document.getElementById("wDay").innerHTML="Penktadienis";
+        			currentDay="Penktadienis";
+        			break;
+        			
+        			case "Penktadienis":
+        			document.getElementById("wDay").style.color= "";
+        			document.getElementById("wDay").innerHTML="Šestadienis";
+        			currentDay="Šestadienis";
+        			break;
+        			case "Šestadienis":
+        			document.getElementById("wDay").style.color= "";
+        			document.getElementById("wDay").innerHTML="Sekmadienis";
+        			currentDay="Sekmadienis";
+        			break;
+        			case "Sekmadienis":
+        			document.getElementById("wDay").style.color= "Red";
+        			document.getElementById("wDay").innerHTML="Pirmadienis";
+        			currentDay="Pirmadienis";
+        			break;
+
+        		
+        	}
+        }  
+
+       			 function imageMouseOn(el){
+				var divElement=document.getElementsByClassName("hidden")[0];
+				divElement.style.display = "block";
+				divElement.getElementsByTagName("img")[0].setAttribute("src", el.getAttribute("src"));
+					}
+
+				function imageMouseOff(el){
+				document.getElementsByClassName("hidden")[0].style.display = "none";
+					}
+
+					function DisplayLargeImage (imageSource){
+						document.getElementById("bigImage").src=imageSource;
+					}
+
+</script>
+	</body>
+	</html>

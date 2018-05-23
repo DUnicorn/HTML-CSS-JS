@@ -1,0 +1,51 @@
+  body {
+        background-color:#F2F2F2;
+        
+      }
+         .container {
+           width: 100%;
+           border: 1px solid gray;
+           position: absolute;
+           left:20px;
+           right:20px;
+           height: 100%;
+           width:90%;
+           margin:auto;
+         }
+
+         .navo {
+
+           background-color: #E6E6E6;
+           text-align: center;
+           color:white;
+           
+         }
+
+         .article {
+           width: 100%;
+           height: 500px;
+
+         }
+         .dfooter {
+           background-color:#D8D8D8;
+           color:black;
+           display: block;
+           text-align: center;
+
+         }
+         .right{
+           background-color: #000000;
+           color:red;
+           text-align: center;
+           width: 100%;
+           height: 25px;  
+         }
+         a:visited {
+          color:#6E6E6E;
+         }
+
+         a:link {
+          color:#BDBDBD;
+          margin-left:100px;
+          font-size: 125%;
+         }

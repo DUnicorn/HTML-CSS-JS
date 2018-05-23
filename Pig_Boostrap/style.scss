@@ -1,0 +1,75 @@
+$brigthtPink:#f4d6f4;
+$whitePink:#ffe0ff;
+$DarkerPink:#e8d3e8;
+$DarkestPink:#dfbddf;
+$SoftGrey:#f4f4f4;
+$lightText:#c4c4c4;
+$darkText:#6f006f; 
+$it : 'italic';
+$bor:10px;
+$borStyle: outset;
+$borCli: padding-box;
+
+
+div img {
+  float:left;
+  margin: 0 0 10px 10px;
+}
+body {
+  background-image: url("http://data.whicdn.com/images/190112743/large.jpg"); 
+  }
+
+.pig_div {
+  background: -webkit-linear-gradient(bottom, $whitePink, $brigthtPink,$SoftGrey);
+  text-align: justify;
+
+ 
+  }
+
+.colWide {
+  background: -webkit-linear-gradient(bottom, $whitePink,$brigthtPink, $SoftGrey); 
+    }
+  
+
+.pinkList {
+  background: -webkit-linear-gradient(bottom, $SoftGrey, $brigthtPink,$whitePink);
+  padding: 5px;
+  display: inline-block; 
+  border-bottom: $bor;
+  background-clip: $borCli;
+
+
+    }
+
+.footer {
+  text-align: center;
+  background-color: $brigthtPink;
+  font-family: $it; 
+  }
+
+a:link{
+color:$darkText;
+font-size: 20px;
+text-shadow:  2px 2px #17202A;
+
+}
+a:visited{
+  color:lightText;
+
+}
+h2 {
+  text-align: center;
+  font-style: $it; }
+
+h1 {
+  text-align: left;
+  font-style: $it;
+  
+  }
+  li {
+    list-style: none;
+    padding: 2px;
+  }
+
+
+/*# sourceMappingURL=style.css.map */
